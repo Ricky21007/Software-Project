@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/AdminDashStyle.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="main-content">
+    <div class="container">
+        
+
+        <header class="header">
+            <div class="header-container">
+              <h1>Admin Dashboard</h1>
+              <div class="header-actions">
+                <button id="notificationButton" class="icon-button">
+                  <div class="notification-badge">0</div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>
+                </button>
+                <!--                <a href="index.html" class="nav-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  User Dashboard
+                </a>
+                -->
+
+              </div>
+            </div>
+          </header>
+      
+          <!-- Main Content -->
+          <main class="main">
+            <!-- Search and Actions -->
+            <div class="controls">
+                <div class="con_con">
+              <div class="search-container">
+                <div class="search-wrapper">
+                  <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+                  <input type="text" id="searchInput" placeholder="Search requests..." class="search-input">
+                </div>
+              </div>
+
+              <button id="addResourceBtn" class="primary-button con_btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                Add New Resource
+              </button>
+            </div>
+            </div>
+      
+            <!-- Tabs -->
+            <div class="tabs">
+              <button class="tab-button active" data-tab="pending">Pending Requests</button>
+              <button class="tab-button" data-tab="approved">Approved</button>
+              <button class="tab-button" data-tab="rejected">Rejected</button>
+              <button class="tab-button" data-tab="all">All Resources</button>
+            </div>
+      
+            <!-- Resource Grid -->
+            <div class="resource-grid" id="resourceGrid">
+              <!-- Resources will be dynamically inserted here -->
+            </div>
+          </main>
+      
+          <!-- Add/Edit Resource Modal -->
+          <div id="resourceModal" class="modal">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 id="modalTitle">Add New Resource</h2>
+                <button class="close-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+              </div>
+              <form id="resourceForm">
+                <div class="form-group">
+                  <label for="title">Title</label>
+                  <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                  <label for="type">Type</label>
+                  <select id="type" name="type" required>
+                    <option value="pdf">PDF</option>
+                    <option value="training">Training</option>
+                    <option value="course">Course</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="description">Description</label>
+                  <textarea id="description" name="description" required></textarea>
+                </div>
+                <div class="form-actions">
+                  <button type="button" class="secondary-button" data-action="cancel">Cancel</button>
+                  <button type="submit" class="primary-button">Save Resource</button>
+                </div>
+              </form>
+            </div>
+          </div>
+      
+          <!-- Notifications Panel -->
+          <div id="notificationsPanel" class="notifications-panel hidden">
+            <div class="notifications-header">
+              <h3>Notifications</h3>
+              <button class="clear-all-button">Clear All</button>
+            </div>
+            <div class="notifications-list">
+              <!-- Notifications will be dynamically inserted here -->
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="../assets/layout.js"></script>
+    <script src="../js/adminDash.js"></script>
+    <script src="../js/userDashMain.js"></script>
+</body>
+</html>

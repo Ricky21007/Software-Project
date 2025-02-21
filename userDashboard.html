@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/UserDashStyle.css">
+
+    <style>
+        .userDash_container{
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+   <div id="header"></div>
+
+    <main class="main-content">
+        <div class="container">
+            <h1>Welcome To the Dashboard</h1>
+            <div class="userDash_container">
+            <div class="search-container">
+                
+                <div class="search-wrapper">
+                  <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+                  <input type="text" id="searchInput" placeholder="Search resources..." class="search-input">
+                </div>
+              </div>
+        
+              <!-- Tabs -->
+              <div class="tabs">
+                <button class="tab-button active" data-tab="resources">Available Resources</button>
+                <button class="tab-button" data-tab="requests">My Requests</button>
+              </div>
+        
+              <!-- Resource Grid -->
+              <div class="resource-grid" id="resourceGrid">
+                <!-- Resources will be dynamically inserted here -->
+              </div>
+                     
+            </div>
+           <div id="footer"></div>
+        </div>
+    </main>
+
+    <script src="/js/main.js"></script>
+    <script src="../assets/layout.js"></script>
+    <script src="login.js"></script>
+    <script src="../js/userDashMain.js"></script>
+</body>
+</html>
